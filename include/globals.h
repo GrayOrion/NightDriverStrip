@@ -236,24 +236,26 @@ extern RemoteDebug Debug;           // Let everyone in the project know about it
     #define PROJECT_NAME            "Demo"
     #endif
 
-    #define MATRIX_WIDTH            144
-    #define MATRIX_HEIGHT           1
+    #define MATRIX_WIDTH            8
+    #define MATRIX_HEIGHT           37
+    #define MATRIX_LAYOUT_LAYOUT    ZigzagLayout
     #define NUM_LEDS                (MATRIX_WIDTH*MATRIX_HEIGHT)
     #define NUM_CHANNELS            1
     #define ENABLE_AUDIO            0
+    #define NUM_FANS        MATRIX_WIDTH
+    #define FAN_SIZE        MATRIX_HEIGHT
 
     // Once you have a working project, selectively enable various additional features by setting
     // them to 1 in the list below.  This DEMO config assumes no audio (mic), or screen, etc.
 
     #ifndef ENABLE_WIFI
-        #define ENABLE_WIFI             0   // Connect to WiFi
+        #define ENABLE_WIFI             1   // Connect to WiFi
     #endif
-
+    
     #define INCOMING_WIFI_ENABLED   0   // Accepting incoming color data and commands
     #define TIME_BEFORE_LOCAL       0   // How many seconds before the lamp times out and shows local content
-    #define ENABLE_NTP              0   // Set the clock from the web
+    #define ENABLE_NTP              1   // Set the clock from the web
     #define ENABLE_OTA              0   // Accept over the air flash updates
-
     #if USE_M5
         #define LED_PIN0 32
     #elif LILYGOTDISPLAYS3
@@ -268,7 +270,7 @@ extern RemoteDebug Debug;           // Let everyone in the project know about it
     // named "esp32-" followed by a seemingly random 6-digit hexadecimal number.
 
     #ifndef ENABLE_WEBSERVER
-        #define ENABLE_WEBSERVER        0   // Turn on the internal webserver
+        #define ENABLE_WEBSERVER        1   // Turn on the internal webserver
     #endif
 
 #elif M5DEMO

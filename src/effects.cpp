@@ -545,9 +545,14 @@ void LoadEffectFactories()
         ADD_EFFECT(EFFECT_STRIP_STATUS, StatusEffect, CRGB::White);
 
     #else
-
+        // Animate a simple rainbow palette by using the palette effect on the built-in rainbow palette
+        ADD_EFFECT(EFFECT_MATRIX_SMFIRE2021,        PatternSMFire2021);
         ADD_EFFECT(EFFECT_STRIP_RAINBOW_FILL, RainbowFillEffect, 6, 2);                    // Simple effect if not otherwise defined above
-
+        ADD_EFFECT(EFFECT_STRIP_FIRE_FAN, FireFanEffect, RainbowColors_p, NUM_LEDS, 1, 10, 400, 2, NUM_LEDS - 20, Sequential, true, false);
+        ADD_EFFECT(EFFECT_STRIP_FIRE, FireEffect, "Calm Fire", NUM_LEDS, 1, 10, 400, 2, 10, true, false);
+        ADD_EFFECT(EFFECT_STRIP_FIRE, FireEffect, "Medium Fire", NUM_LEDS, 1, 10, 400, 2, 4, true, false);
+        
+        
     #endif
 
     // Set the effect set version to the default value of 1 if none was set yet
